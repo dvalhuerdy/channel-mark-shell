@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NAV_LINKS, site } from '@/lib/site';
+import { NAV_LINKS } from '@/lib/site';
 import Logo from './Logo';
 
 export default function Navbar() {
@@ -19,8 +19,8 @@ export default function Navbar() {
 
   return (
     <nav id="nav" className={scrolled ? 'scrolled' : ''}>
-      <Link href="/" className="nav-logo" aria-label={site.name}>
-        <Logo markSize={40} />
+      <Link href="/" className="nav-logo" aria-label="Channel Mark Shell">
+        <Logo variant="mascot" height={48} priority />
       </Link>
       <ul className="nav-links">
         {NAV_LINKS.map((link) => (
@@ -32,7 +32,7 @@ export default function Navbar() {
         ))}
       </ul>
       <Link href="/contact" className="nav-cta">
-        Request a Quote
+        Free Quote
       </Link>
     </nav>
   );

@@ -22,7 +22,7 @@ export default function SiteInteractions() {
     document.addEventListener('mousemove', onMouseMove);
 
     const hoverables = document.querySelectorAll(
-      'a,button,.svc-card,.trust-item,.stat,.pillar,.info-card'
+      'a,button,.svc-card,.trust-item,.stat,.bop-card,.info-card,.photo-tile,.photo-banner'
     );
     const onEnter = () => document.body.classList.add('ch');
     const onLeave = () => document.body.classList.remove('ch');

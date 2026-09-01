@@ -1,34 +1,20 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { TRUST_POINTS, site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Channel Mark Shell is a licensed general contractor based in Cape Coral, FL with over 30 years in the field, serving builders and developers across Southwest Florida.',
+    'Channel Mark Shell is a licensed general contractor based in Cape Coral with over 30 years in the field, serving builders and developers across Southwest Florida.',
 };
-
-const VOCAB = [
-  'Square',
-  'Plumb',
-  'Elevation',
-  'Tie Beam',
-  'Lintel',
-  'Footer',
-  'Tolerance',
-  'On Schedule',
-  'Phase Inspection',
-  'Shell Package',
-  'Poured',
-  'Set',
-];
 
 export default function AboutPage() {
   return (
     <>
       <section className="page-hero">
         <span className="eyebrow">About</span>
-        <h1 className="page-hero-title">The mark everything else is built on.</h1>
+        <h1 className="page-hero-title">Built tough. Finished right.</h1>
         <p className="page-hero-sub">
           Channel Mark Shell is a licensed general contractor based in Cape Coral, working site work through
           framing for builders and developers across Southwest Florida.
@@ -36,40 +22,27 @@ export default function AboutPage() {
       </section>
 
       <section className="section">
-        <div className="mark-block">
+        <div className="svc-detail" style={{ borderBottom: 'none', paddingBottom: 0 }}>
           <div className="rv">
-            <span className="eyebrow">The Name</span>
-            <p className="mark-quote">
-              A channel marker is the fixed beacon that shows every captain in a Cape Coral canal where the{' '}
-              <span className="accent">safe water</span> is.
-            </p>
+            <span className="eyebrow">Who We Are</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.1rem)' }}>
+              Where concrete strength meets craftsmanship.
+            </h2>
           </div>
-          <div className="mark-copy rv d1">
-            <p>
-              It doesn&apos;t move. It doesn&apos;t guess. Everything downstream of it depends on it being exactly
-              where it says it is — in a city built on 400 miles of canals, by a company already named after the
-              thing that gets it right.
+          <div className="rv d1">
+            <p className="svc-detail-desc">
+              Channel Mark Shell has spent over 30 years pouring foundations under Southwest Florida homes and
+              commercial builds — site development, flat work, shell, masonry, beam forming, and framing, all under
+              one crew. We&apos;re a licensed general contractor ({site.license}) based in Cape Coral, working
+              across Cape Coral, Fort Myers and greater SWFL.
             </p>
-            <p>
-              That&apos;s what a shell contractor does for a builder: footers, block, and beams set square the first
-              time, so every trade behind us stays on schedule. We don&apos;t sell adjectives. We talk in
-              tolerances — elevations, plumb lines, and inspections passed.
-            </p>
-            <p>
-              Channel Mark Shell is a licensed general contractor (CGC1529824) with over 30 years in the field,
-              based in Cape Coral and working across Southwest Florida.
+            <p className="svc-detail-desc" style={{ marginTop: 16 }}>
+              We talk like the trade, not the marketing department: forms set, rebar tied, inspection passed. The
+              work is the proof.
             </p>
           </div>
         </div>
       </section>
-
-      <div className="term-strip">
-        {VOCAB.map((v) => (
-          <span className="term" key={v}>
-            {v}
-          </span>
-        ))}
-      </div>
 
       <section className="section">
         <div className="section-head left">
@@ -86,48 +59,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section section-navy">
+      <section className="section">
         <div className="section-head left">
-          <span className="eyebrow">How We Work</span>
-          <h2 className="section-title">Three pillars, every project.</h2>
+          <span className="eyebrow">The Fleet</span>
+          <h2 className="section-title">You&apos;ve probably already seen us.</h2>
         </div>
-        <div className="mark-block" style={{ gridTemplateColumns: '1fr 1fr 1fr', gap: 32 }}>
-          <div className="rv">
-            <p className="pillar-mark">01</p>
-            <p style={{ fontFamily: 'var(--f-disp)', fontWeight: 700, textTransform: 'uppercase', fontSize: '1.2rem', color: 'var(--white)' }}>
-              Set the Mark
-            </p>
-            <p style={{ color: 'var(--formboard)', marginTop: 10, fontSize: '0.94rem' }}>
-              Precision as the product — elevations, lines, square corners, plumb block.
-            </p>
-          </div>
-          <div className="rv d1">
-            <p className="pillar-mark">02</p>
-            <p style={{ fontFamily: 'var(--f-disp)', fontWeight: 700, textTransform: 'uppercase', fontSize: '1.2rem', color: 'var(--white)' }}>
-              Built to Stay
-            </p>
-            <p style={{ color: 'var(--formboard)', marginTop: 10, fontSize: '0.94rem' }}>
-              Post-Ian Florida: wind resistance, flood elevation, and phase inspections done right the first time.
-            </p>
-          </div>
-          <div className="rv d2">
-            <p className="pillar-mark">03</p>
-            <p style={{ fontFamily: 'var(--f-disp)', fontWeight: 700, textTransform: 'uppercase', fontSize: '1.2rem', color: 'var(--white)' }}>
-              One Crew, Start to Finish
-            </p>
-            <p style={{ color: 'var(--formboard)', marginTop: 10, fontSize: '0.94rem' }}>
-              Site work through framing under one license, one number, one office.
-            </p>
-          </div>
+        <div className="photo-banner rv">
+          <Image src="/photos/trucks.png" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <div className="photo-banner-caption">Site · Flat Work · Shell · Masonry · Beam Forming · Framing</div>
         </div>
       </section>
 
       <section className="cta-band">
-        <h2 className="cta-title">Work with a crew that sets the mark.</h2>
-        <p className="cta-sub">CGC1529824 · Certificate of insurance on request, same day.</p>
+        <p className="cta-eyebrow">Quality construction from the ground up.</p>
+        <h2 className="cta-title">Work with a crew that shows up.</h2>
+        <p className="cta-sub">
+          {site.license} · Certificate of insurance on request.
+        </p>
         <div className="cta-actions">
-          <Link href="/contact" className="btn-red">
-            Request a Quote
+          <Link href="/contact" className="btn-teal">
+            Get a Free Quote
           </Link>
           <a href={site.phoneHref} className="btn-outline">
             Call {site.phone}

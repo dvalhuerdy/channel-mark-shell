@@ -5,7 +5,7 @@ import { SERVICES, site } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Site work, flat work, shell, masonry, beam forming and framing — one licensed crew serving builders across Southwest Florida.',
+    'Site development, flat work, shell, masonry, beam forming and framing — one licensed crew serving builders across Southwest Florida.',
 };
 
 export default function ServicesPage() {
@@ -15,8 +15,8 @@ export default function ServicesPage() {
         <span className="eyebrow">Services</span>
         <h1 className="page-hero-title">Site work through framing. One crew.</h1>
         <p className="page-hero-sub">
-          Six trades under one license and one call. Every scope is set to plan, checked to tolerance, and handed
-          off ready for the next crew — no gaps, no re-work, no surprises at phase inspection.
+          From site prep to final finish, our crew pours, forms and finishes to plan — so the trades that follow us
+          never have to fix our work.
         </p>
       </section>
 
@@ -24,7 +24,7 @@ export default function ServicesPage() {
         {SERVICES.map((s, i) => (
           <div className="svc-detail rv" id={s.slug} key={s.slug}>
             <div>
-              <span className="svc-detail-index">{String(i + 1).padStart(2, '0')} / Shell Division</span>
+              <span className="svc-detail-index">{String(i + 1).padStart(2, '0')} / Channel Mark Shell</span>
               <h2 className="svc-detail-title">{s.name}</h2>
             </div>
             <div>
@@ -42,14 +42,12 @@ export default function ServicesPage() {
       </section>
 
       <section className="cta-band">
+        <p className="cta-eyebrow">Quality construction from the ground up.</p>
         <h2 className="cta-title">Not sure where your project fits?</h2>
-        <p className="cta-sub">
-          Send the plans and we&apos;ll scope it — site work through framing, one number back in three business
-          days.
-        </p>
+        <p className="cta-sub">Send us the scope and we&apos;ll get you a number — site work through framing.</p>
         <div className="cta-actions">
-          <Link href="/contact" className="btn-red">
-            Request a Quote
+          <Link href="/contact" className="btn-teal">
+            Get a Free Quote
           </Link>
           <a href={site.phoneHref} className="btn-outline">
             Call {site.phone}

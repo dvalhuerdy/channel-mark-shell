@@ -99,7 +99,7 @@ export default function ContactForm() {
       {status === 'error' && (
         <p className="form-note form-note-error">{errorMessage}</p>
       )}
-      <button type="submit" className="btn-red" style={{ justifyContent: 'center' }} disabled={status === 'submitting'}>
+      <button type="submit" className="btn-teal" style={{ justifyContent: 'center' }} disabled={status === 'submitting'}>
         {status === 'submitting' ? 'Sending…' : 'Send Project Details'}
       </button>
       <p className="form-note">

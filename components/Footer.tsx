@@ -7,9 +7,10 @@ export default function Footer() {
     <footer>
       <div className="ft">
         <div className="ft-brand">
-          <Logo variant="stacked" markSize={44} className="ft-brand-logo" />
+          <Logo variant="full" height={150} className="ft-brand-logo" />
           <p className="fs">
-            Licensed shell &amp; structural contractor serving builders and developers across Southwest Florida.
+            Cape Coral&apos;s site work, shell &amp; masonry crew. Licensed general contractor serving Southwest
+            Florida since we started pouring footers.
           </p>
           <div className="ft-c">
             <a href={site.phoneHref}>{site.phone}</a>

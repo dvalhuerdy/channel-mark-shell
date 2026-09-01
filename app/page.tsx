@@ -1,71 +1,54 @@
 import Link from 'next/link';
-import BeaconField from '@/components/BeaconField';
-import { SERVICES, STATS, site } from '@/lib/site';
+import Image from 'next/image';
+import { SERVICES, STATS, PERSONALITY_TAGS, BRAND_ONE_PAGE, site } from '@/lib/site';
 
-const PILLARS = [
-  {
-    mark: '01',
-    title: 'Set the Mark',
-    desc: 'Precision as the product. Elevations, lines, square corners, plumb block — we talk about tolerances, not adjectives.',
-  },
-  {
-    mark: '02',
-    title: 'Built to Stay',
-    desc: 'Post-Ian Florida means wind resistance, flood elevation, and phase inspections done right the first time.',
-  },
-  {
-    mark: '03',
-    title: 'One Crew, Start to Finish',
-    desc: 'Site work through framing under one license, one number, one office — nothing gets lost between trades.',
-  },
-];
+const TAG_STYLES: Record<string, string> = {
+  Dependable: 'tag-harbor',
+  Precise: 'tag-teal',
+  Hardworking: 'tag-sand',
+  Local: 'tag-outline',
+};
 
 export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <BeaconField />
-        <div className="hero-overlay" />
-        <div className="hero-inner">
-          <div className="hero-eyebrow">Cape Coral · Southwest Florida</div>
-          <h1 className="hero-h1">
-            SET <span className="accent">THE MARK.</span>
-          </h1>
-          <p className="hero-sub">
-            Site work, flat work, shell, masonry, beam forming and framing for builders and developers across
-            Southwest Florida — the structure everything else is built on.
-          </p>
-          <div className="hero-ctas">
-            <Link href="/contact" className="btn-red">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
+        <div className="hero-panel">
+          <div className="hero-eyebrow-row">
+            <span className="hero-rule" />
+            <span>Cape Coral · Southwest Florida</span>
+          </div>
+          <div className="hero-mid">
+            <h1 className="hero-h1">
+              Quality construction
+              <br />
+              from the ground up
+            </h1>
+            <p className="hero-sub">
+              Site work, shell, concrete and masonry across Southwest Florida. Licensed general contractor{' '}
+              {site.license} · 30+ years in the field.
+            </p>
+            <div className="hero-ctas">
+              <Link href="/contact" className="btn-teal">
+                Get a Free Quote
+              </Link>
+              <Link href="/services" className="btn-outline">
+                Our Services
+              </Link>
+            </div>
+          </div>
+          <div className="hero-strip">
+            <a href={site.phoneHref} className="hero-phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
               </svg>
-              Request a Quote
-            </Link>
-            <Link href="/services" className="btn-outline">
-              Our Services
-            </Link>
+              {site.phone}
+            </a>
+            <span className="hero-loc">{site.serviceArea}</span>
           </div>
         </div>
-        <div className="hero-bottom">
-          <a href={site.phoneHref} className="hero-phone">
-            <svg viewBox="0 0 24 24">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
-            </svg>
-            {site.phone}
-          </a>
-          <span className="hero-loc">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-              <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z" />
-              <circle cx="12" cy="9" r="2.5" />
-            </svg>
-            {site.serviceArea}
-          </span>
-          <div className="hero-badges">
-            <span className="hero-badge">Licensed</span>
-            <span className="hero-badge">Insured</span>
-            <span className="hero-badge">30+ Years</span>
-          </div>
+        <div className="hero-photo">
+          <Image src="/photos/slab.png" alt="Rebar slab prep on the water, Cape Coral" fill priority sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
         </div>
       </section>
 
@@ -81,7 +64,7 @@ export default function HomePage() {
               ))}
               <span className="t-item">Licensed {site.license}</span>
               <span className="t-item t-dot">·</span>
-              <span className="t-item">Cape Coral · SWFL</span>
+              <span className="t-item">30+ Years in the Field</span>
               <span className="t-item t-dot">·</span>
             </span>
           ))}
@@ -106,8 +89,8 @@ export default function HomePage() {
           <span className="eyebrow">What We Build</span>
           <h2 className="section-title">Site work through framing. One crew.</h2>
           <p className="section-lede">
-            Six trades, one number to call. Every scope below is set to plan, checked to tolerance, and handed off
-            ready for the next crew.
+            From site prep to final finish, our crew pours, forms and finishes to plan — so the trades that follow
+            us never have to fix our work.
           </p>
         </div>
         <div className="svc-grid">
@@ -127,60 +110,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-navy" style={{ padding: 0 }}>
-        <div className="section-head left" style={{ padding: '90px 5vw 0', margin: 0 }}>
-          <span className="eyebrow">Why Channel Mark</span>
-          <h2 className="section-title">Precision that nobody notices until it&apos;s missing.</h2>
+      <section className="section section-harbor">
+        <div className="quote-block rv">
+          <p className="quote-text">
+            &ldquo;Built tough. Finished right.&rdquo; Channel Mark Shell is the crew builders call when the
+            foundation has to be perfect — because everything above it depends on us.
+          </p>
         </div>
-        <div className="pillars" style={{ marginTop: 48 }}>
-          {PILLARS.map((p) => (
-            <div className="pillar rv" key={p.mark}>
-              <div className="pillar-mark">{p.mark}</div>
-              <div className="pillar-title">{p.title}</div>
-              <p className="pillar-desc">{p.desc}</p>
+        <div className="bop-grid">
+          {BRAND_ONE_PAGE.map((b, i) => (
+            <div className={`bop-card rv d${i}`} key={b.label}>
+              <div className="bop-label">{b.label}</div>
+              <p className="bop-copy">{b.copy}</p>
             </div>
           ))}
         </div>
-        <div style={{ height: 90 }} />
+        <div className="tag-row rv">
+          {PERSONALITY_TAGS.map((t) => (
+            <span key={t} className={`tag ${TAG_STYLES[t]}`}>
+              {t}
+            </span>
+          ))}
+        </div>
       </section>
 
-      <section className="section">
-        <div className="mark-block">
-          <div className="rv">
-            <span className="eyebrow">The Name</span>
-            <p className="mark-quote">
-              A channel marker is the fixed beacon that shows every captain where the <span className="accent">safe water</span> is.
-              It doesn&apos;t move. It doesn&apos;t guess.
-            </p>
+      <section className="section photo-section">
+        <div className="section-head left">
+          <span className="eyebrow">On the Job</span>
+          <h2 className="section-title">Real jobsites. Real crew.</h2>
+        </div>
+        <div className="photo-grid">
+          <div className="photo-tile photo-tile-lg rv">
+            <Image src="/photos/pour.png" alt="Crew placing concrete" fill sizes="(max-width: 900px) 100vw, 66vw" style={{ objectFit: 'cover' }} />
           </div>
-          <div className="mark-copy rv d1">
-            <p>
-              Everything downstream of it depends on it being exactly where it says it is — which is precisely what a
-              shell contractor does for a builder. Footers, block, and beams set square the first time keep every
-              trade behind us on schedule.
-            </p>
-            <p>
-              We&apos;re Channel Mark Shell: a licensed general contractor (CGC1529824) with over 30 years in the
-              field, based in Cape Coral and working across Southwest Florida.
-            </p>
-            <Link href="/about" className="svc-link" style={{ marginTop: 20, color: 'var(--navy)' }}>
-              Read our story
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </Link>
+          <div className="photo-tile rv d1">
+            <Image src="/photos/block.png" alt="Block wall construction" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
           </div>
+        </div>
+        <div className="photo-banner rv">
+          <Image src="/photos/trucks.png" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <div className="photo-banner-caption">You&apos;ve probably already seen our trucks.</div>
         </div>
       </section>
 
       <section className="cta-band">
-        <h2 className="cta-title">Send us the plans.</h2>
-        <p className="cta-sub">
-          You&apos;ll have a number back in three business days. Certificate of insurance on request, same day.
-        </p>
+        <p className="cta-eyebrow">Quality construction from the ground up.</p>
+        <h2 className="cta-title">Built tough. Finished right.</h2>
+        <p className="cta-sub">Site work, shell, concrete and masonry across Southwest Florida.</p>
         <div className="cta-actions">
-          <Link href="/contact" className="btn-red">
-            Request a Quote
+          <Link href="/contact" className="btn-teal">
+            Get a Free Quote
           </Link>
           <a href={site.phoneHref} className="btn-outline">
             Call {site.phone}

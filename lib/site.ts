@@ -2,16 +2,34 @@ export const site = {
   name: 'Channel Mark Shell',
   legalName: 'Channel Mark Shell LLC',
   shortName: 'Channel Mark',
-  tagline: 'Set the mark.',
+  tagline: 'Quality construction from the ground up.',
   license: 'CGC1529824',
   phone: '(239) 984-2678',
   phoneHref: 'tel:2399842678',
   email: 'admin@channelmarkshell.com',
+  contactName: 'David Moreira',
   address: '916 SE 8th Pl, Cape Coral, FL 33990',
   hours: 'Mon–Fri · 8:00 AM – 4:30 PM',
   city: 'Cape Coral, FL',
   serviceArea: 'Cape Coral, Fort Myers & Southwest Florida',
 };
+
+export const PERSONALITY_TAGS = ['Dependable', 'Precise', 'Hardworking', 'Local'];
+
+export const BRAND_ONE_PAGE = [
+  {
+    label: 'What we do',
+    copy: 'Site development, flat work, shell, masonry, beam forming, slab & footing work, framing.',
+  },
+  {
+    label: 'Who we serve',
+    copy: 'Custom home builders, GCs and commercial developers in Cape Coral, Fort Myers and greater SWFL.',
+  },
+  {
+    label: 'Why us',
+    copy: 'Three decades of pours, an in-house crew, and work that passes inspection the first time.',
+  },
+];
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },

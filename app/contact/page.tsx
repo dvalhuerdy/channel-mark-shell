@@ -5,7 +5,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Send us your plans and get a number back in three business days. Call (239) 984-2678 or request a quote online.',
+    'Get a free quote from Channel Mark Shell. Call (239) 984-2678 or send your project details online.',
 };
 
 export default function ContactPage() {
@@ -13,9 +13,9 @@ export default function ContactPage() {
     <>
       <section className="page-hero">
         <span className="eyebrow">Contact</span>
-        <h1 className="page-hero-title">Send us the plans.</h1>
+        <h1 className="page-hero-title">Get a free quote.</h1>
         <p className="page-hero-sub">
-          You&apos;ll have a number back in three business days. For anything urgent, call us directly.
+          Tell us about your project and we&apos;ll follow up shortly. For anything urgent, call us directly.
         </p>
       </section>
 
@@ -34,6 +34,8 @@ export default function ContactPage() {
                 <a href={site.phoneHref}>{site.phone}</a>
                 <br />
                 <a href={`mailto:${site.email}`}>{site.email}</a>
+                <br />
+                Ask for {site.contactName}
               </div>
             </div>
             <div className="info-card rv d1">
