@@ -65,7 +65,7 @@ export default function AboutPage() {
           <h2 className="section-title">You&apos;ve probably already seen us.</h2>
         </div>
         <div className="photo-banner rv">
-          <Image src="/photos/trucks.png" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <Image src="/photos/trucks.jpg" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
           <div className="photo-banner-caption">Site · Flat Work · Shell · Masonry · Beam Forming · Framing</div>
         </div>
       </section>

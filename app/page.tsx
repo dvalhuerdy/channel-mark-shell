@@ -48,7 +48,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-photo">
-          <Image src="/photos/slab.png" alt="Rebar slab prep on the water, Cape Coral" fill priority sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+          <Image src="/photos/slab.jpg" alt="Rebar slab prep on the water, Cape Coral" fill priority sizes="(max-width: 900px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
         </div>
       </section>
 
@@ -141,14 +141,14 @@ export default function HomePage() {
         </div>
         <div className="photo-grid">
           <div className="photo-tile photo-tile-lg rv">
-            <Image src="/photos/pour.png" alt="Crew placing concrete" fill sizes="(max-width: 900px) 100vw, 66vw" style={{ objectFit: 'cover' }} />
+            <Image src="/photos/pour.jpg" alt="Crew placing concrete" fill sizes="(max-width: 900px) 100vw, 66vw" style={{ objectFit: 'cover' }} />
           </div>
           <div className="photo-tile rv d1">
-            <Image src="/photos/block.png" alt="Block wall construction" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
+            <Image src="/photos/block.jpg" alt="Block wall construction" fill sizes="(max-width: 900px) 100vw, 33vw" style={{ objectFit: 'cover' }} />
           </div>
         </div>
         <div className="photo-banner rv">
-          <Image src="/photos/trucks.png" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+          <Image src="/photos/trucks.jpg" alt="Channel Mark Shell wrapped fleet trucks" fill sizes="100vw" style={{ objectFit: 'cover' }} />
           <div className="photo-banner-caption">You&apos;ve probably already seen our trucks.</div>
         </div>
       </section>
