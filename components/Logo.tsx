@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
 const ASSETS = {
-  full: { src: '/brand/logo-white.png', width: 1788, height: 1788 },
-  mascot: { src: '/brand/mascot-white.png', width: 1644, height: 788 },
+  full: { src: '/brand/logo-white.png', width: 4096, height: 4096 },
+  mascot: { src: '/brand/mascot-white.png', width: 3434, height: 1557 },
 };
 
 type LogoProps = {
