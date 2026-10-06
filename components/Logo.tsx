@@ -1,8 +1,6 @@
-import Image from 'next/image';
-
 const ASSETS = {
-  full: { src: '/brand/logo-white.png', width: 4096, height: 4096 },
-  mascot: { src: '/brand/mascot-white.png', width: 3434, height: 1557 },
+  full: { src: '/brand/logo-mark.svg', width: 3520, height: 3520 },
+  mascot: { src: '/brand/logo-mascot.svg', width: 2973, height: 1254 },
 };
 
 type LogoProps = {
@@ -14,18 +12,25 @@ type LogoProps = {
   priority?: boolean;
 };
 
+/**
+ * Source art is black-ink-on-transparent (a vector trace of the real logo).
+ * The site only ever shows the logo on dark backgrounds, so it's knocked out
+ * to white via a CSS invert — the art is pure grayscale, so invert(1) maps
+ * black -> white cleanly without touching any hue.
+ */
 export default function Logo({ variant = 'full', height, className, priority }: LogoProps) {
   const asset = ASSETS[variant];
   const width = Math.round((asset.width / asset.height) * height);
   return (
-    <Image
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
       src={asset.src}
       alt="Channel Mark Shell LLC"
       width={width}
       height={height}
       className={className}
-      priority={priority}
-      style={{ width, height, objectFit: 'contain' }}
+      loading={priority ? 'eager' : 'lazy'}
+      style={{ width, height, objectFit: 'contain', filter: 'invert(1)' }}
     />
   );
 }
