@@ -1,6 +1,6 @@
 const ASSETS = {
   full: { src: '/brand/logo-mark.svg', width: 3520, height: 3520 },
-  mascot: { src: '/brand/logo-mascot.svg', width: 2973, height: 1254 },
+  mascot: { src: '/brand/logo-mascot.svg', width: 2953, height: 1839 },
 };
 
 type LogoProps = {
