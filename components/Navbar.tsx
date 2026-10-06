@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav id="nav" className={scrolled ? 'scrolled' : ''}>
       <Link href="/" className="nav-logo" aria-label="Channel Mark Shell">
-        <Logo variant="mascot" height={48} priority />
+        <Logo variant="mascot" height={68} priority />
       </Link>
       <ul className="nav-links">
         {NAV_LINKS.map((link) => (
